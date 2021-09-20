@@ -1,4 +1,8 @@
-# Your custom Twilio Flex Plugin
+# plugin-escalate-sms-to-voice
+
+This is a sample Twilio Flex plugin that adds a call button when agent is in an SMS task.
+
+NOTE: this is only sample code and requires further effort to be deployed.
 
 Twilio Flex Plugins allow you to customize the appearance and behavior of [Twilio Flex](https://www.twilio.com/flex). If you want to learn more about the capabilities and how to use the API, check out our [Flex documentation](https://www.twilio.com/docs/flex).
 
