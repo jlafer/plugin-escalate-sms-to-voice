@@ -22,18 +22,18 @@ export class CallButton extends React.Component {
 
   /*
     render a call button whose onClick handler starts an O/B call, passing
-    the current customer's phone number as the destination
+    the current customer's phone number as the default destination
   */
   render() {
-    const { attributes } = this.props.task
+    const { attributes, defaultFrom } = this.props.task
     return (
       <IconButton
         icon={<Call />}
         className={callbutton}
         onClick={(e) => {
           this.props.flex.Actions.invokeAction('StartOutboundCall', {
-            destination: attributes.from,
-            taskAttributes: { ...attributes },
+            destination: defaultFrom,
+            taskAttributes: { ...attributes }
           })
         }}
       />

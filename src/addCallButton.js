@@ -2,15 +2,13 @@ import React from 'react'
 import CallButton from './CallButton'
 
 const addCallButton = (flex, manager) => {
-  // display call button if current task is SMS and a "from" Task attribute was passed by bot
+  // display call button if the current selected task is for SMS 
   flex.TaskCanvasHeader.Content.add(
     <CallButton key="callbutton" flex={flex} />,
     {
       if: (props) =>
-        props.task &&
-        props.task.attributes &&
-        props.task.attributes.channelType === 'sms' &&
-        props.task.attributes.from
+        props.task && props.task.taskChannelUniqueName === 'sms' &&
+        props.task.defaultFrom
     }
   )
 
@@ -27,8 +25,6 @@ const addCallButton = (flex, manager) => {
       // perhaps callerid could be based on LOB, customer segment or other criteria
       //payload.callerId = '+18005551212';
     }
-    // change channelType for the new (voice) task
-    payload.taskAttributes.channelType = 'voice';
     console.log('updated outbound call payload to:', payload)
   })
 }
